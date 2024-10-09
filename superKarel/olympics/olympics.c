@@ -1,18 +1,34 @@
 #include <superkarel.h>
 
+#define SPEED 100
+
 void jump_over();
 void turn_right();
 
 int main() {
-    turn_on("training.kw");
+    turn_on("olympics.kw");
 	
+
     while(no_beepers_present()){
-	jump_over();
+    	while(front_is_blocked()){
+    		jump_over();
+    	}
+
+    	while(front_is_clear() && no_beepers_present()){
+    		step();
+    	}
+
     }
 
     turn_off();
 
     return 0;
+}
+
+void turn_right(){
+	turn_left();
+	turn_left();
+	turn_left();
 }
 
 void jump_over(){
@@ -22,11 +38,5 @@ void jump_over(){
 	step();
 	turn_right();
 	step();
-	turn_left();
-}
-
-void turn_right(){
-	turn_left();
-	turn_left();
 	turn_left();
 }

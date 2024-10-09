@@ -10,7 +10,7 @@ int main() {
     turn_on("stairs3.kw");
 
     set_step_delay(SPEED);
-
+/*
     step();
 
     while(!front_is_clear()){
@@ -24,12 +24,14 @@ int main() {
     while(beepers_in_bag()){
     	put_beeper();
     }
+*/
 
+    printf(world_width());
     turn_off();
 
     return 0;
 }
-
+/*
 void turn_right(){
 	turn_left();
 	turn_left();
@@ -47,4 +49,4 @@ void move_on_stair(){
 		move_on_stair();
 	}
 	
-}
+}*/
