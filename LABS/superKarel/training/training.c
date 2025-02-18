@@ -6,29 +6,17 @@ void jump_over();
 void turn_right();
 
 int main() {
-    turn_on("olympics.kw");
+    turn_on("training.kw");
+
+    set_step_delay(SPEED);
 	
-
     while(no_beepers_present()){
-    	while(front_is_blocked()){
-    		jump_over();
-    	}
-
-    	while(front_is_clear() && no_beepers_present()){
-    		step();
-    	}
-
+	jump_over();
     }
 
     turn_off();
 
     return 0;
-}
-
-void turn_right(){
-	turn_left();
-	turn_left();
-	turn_left();
 }
 
 void jump_over(){
@@ -38,5 +26,11 @@ void jump_over(){
 	step();
 	turn_right();
 	step();
+	turn_left();
+}
+
+void turn_right(){
+	turn_left();
+	turn_left();
 	turn_left();
 }
